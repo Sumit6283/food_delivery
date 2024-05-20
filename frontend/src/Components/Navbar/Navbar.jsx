@@ -3,14 +3,15 @@ import './Navbar.css'
 import logo from '../../assets/logo.png'
 import search_icon from '../../assets/search_icon.png'
 import basket_icon from '../../assets/basket_icon.png'
+import { Link } from 'react-router-dom'
 
 const Navbar = ({setShowLogin}) => {
   const [menu,setMenu] = useState("home");
   return (
     <div className='navbar'>
-        <div className="logo">
+       <Link to={'/'}> <div className="logo">
             <img src={logo} alt="" />
-        </div>
+        </div> </Link>
         <ul className='links'>
             <li onClick={()=>setMenu("home")} className={menu==="home"?"active":""}>home</li>
             <li onClick={()=>setMenu("menu")} className={menu==="menu"?"active":""}>menu</li>
@@ -20,7 +21,7 @@ const Navbar = ({setShowLogin}) => {
         <div className="right">
             <img src={search_icon} alt="" />
             <div className="navbar-search-icon">
-              <img src={basket_icon} alt="" />
+             <Link to={'/cart'}><img src={basket_icon} alt="" /></Link>
               <div className="dot">2</div>
             </div>
             <button onClick={()=>setShowLogin(true)}>Sign In</button>
