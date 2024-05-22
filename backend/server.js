@@ -6,17 +6,6 @@ import cors from "cors";
 import { connectDB } from './config/db.js';
 const app = express();
 
-// mongoose.connect('');
-
-// const product = mongoose.model("products",({
-//     name:{
-//         type:String,
-//     },
-//     email:{
-//         email:String,
-//     }
-// }))
-
 app.use(express.json());
 
 app.use(cors());
